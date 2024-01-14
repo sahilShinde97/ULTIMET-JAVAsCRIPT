@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baby Weather App</title>
+</head>
+<body>
+  <script>
+//function
+// this is a  function called 'greeting'
+// and it has 0 arguments
+// dose : it logs out your name to the console
+/*
+    function greeting(){
+       console.log('ram');
+       
+  }
+   
+ // greeting();
+ 
+// this is a  function called 'greeting 1'
+// and it has 1 argument call `name`
+// dose : it logs out your name to the console
+// also concatenate using + operator
+
+    function greeting1(name){
+       greet = 'hi ' + name + ' nice to meet you';
+
+        console.log(greet)
+        
+   }
+    
+  // greeting1('lance');
+  
+
+// this is a  function called 'greeting 1'
+// and it has 1 argument call `name`
+// dose : it logs out your name to the console
+// also concatenate using `${name}`
+    
+   function greeting3(name){  
+    greet = `hi ${name} nice to meet you`
+     console.log(greet)
+     
+}
+*/
+//greeting3('lance');
+
+function sum(a,b){
+  //return 
+  return a + b;
+}
+
+
+function calculateTipAndFoodTotal( food,tip){
+
+ const tipPercentage = tip / 100;
+ const tipAmount = food * tipPercentage;
+ const total = sum(food, tipAmount);
+  return total;
+  
+}
+console.log( calculateTipAndFoodTotal(300,60));
+
+// ES 6 
+// Arrow function =>
+// Arrow function with explicit return
+const sumArrow = (a , b) =>{
+return a + b
+}
+// arrow Function with implicit return
+// IMP = For implicit return , remove curly braces 
+const sumArrow1 = (a , b) =>  a + b;
+console.log(sumArrow1(10, 20))
+
+  </script>
+</body>
+</html>
