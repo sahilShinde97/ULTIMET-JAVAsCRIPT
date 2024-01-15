@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Document</title>
+</head>
+<body>
+<script>
+  // objects
+  // key : value pairs
+/*
+  const person = {
+    person_name : 'Leonardo',
+    person_shirt : 'white'
+  }
+
+  // bracket notation
+  console.log(person['person_shirt']);
+  console.log(person['person_name'])
+  //access objects : dot notation
+
+  console.log(person.person_name);
+  console.log(person.person_shirt)
+
+  // assign object 
+  person.phone = '8668707139';
+  console.log(person);
+  console.log(person.phone)
+  // using bracket notation 
+  person['phoneNo'] = '8668708979'
+  console.log(person['phoneNo']);
+
+  // second object
+
+  let person2 = {
+    name : 'Qazi',
+    shirt: 'black',
+  }
+
+  console.log(person2);
+
+  person2.phone3 = '69495156120';
+  console.log(person2.phone3);
+  
+  person2['phone4'] = '554655565154';
+  console.log(person2['phone4']);
+
+  console.log(person2['name']);
+  console.log(person2['shirt']);
+
+*/
+  // es6 arrow function (2 arguments)
+  // object
+  // template literals
+  // method : Math.floor()
+
+  const introducer = (name,shirt) =>{
+    const person = {
+      name: name,
+      shirt: shirt,
+      assets : 100000,
+      liabilities : 50000,
+      netWorth : function(){
+         return this.assets - this.liabilities
+      },
+    }
+     const intro =  `hi , my name is ${person.name} and the color of my shirt is ${person.shirt} and my net worth is${person.netWorth()} $`;
+
+     return intro;
+  }
+  
+  console.log(introducer('sahil','yellow'));
+  //console.log(introducer('leonardo' , 'white'))
+
+
+</script>
+</body>
+</html>
