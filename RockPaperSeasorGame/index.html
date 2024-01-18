@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    button {
+      font-size: 16px;
+      margin: 10px;
+      padding: 5px 10px;
+    }
+
+    #result {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Rock, Paper, Scissors</h1>
+  <button id="rock">Rock</button>
+  <button id="paper">Paper</button>
+  <button id="scissors">Scissors</button>
+  <div id="result"></div>
+
+  <script>
+    // Function to generate computer's choice
+    function getComputerChoice() {
+      const choices = ['rock', 'paper', 'scissors'];
+      const randomNumber = Math.floor(Math.random() * 3);
+      return choices[randomNumber];
+    }
+
+    // Function to determine the winner
+    function determineWinner(userChoice, computerChoice) {
+      if (userChoice === computerChoice) {
+        return 'It\'s a tie!';
+      } else if (
+        (userChoice === 'rock' && computerChoice === 'scissors') ||
+        (userChoice === 'paper' && computerChoice === 'rock') ||
+        (userChoice === 'scissors' && computerChoice === 'paper')
+      ) {
+        return 'You win!';
+      } else {
+        return 'Computer wins!';
+      }
+    }
+
+    // Function to display result in the DOM
+    function displayResult(userChoice, computerChoice, result) {
+      const resultElement = document.getElementById('result');
+      resultElement.innerHTML = `<p>Your choice: ${userChoice}</p>
+                                 <p>Computer's choice: ${computerChoice}</p>
+                                 <p>${result}</p>`;
+    }
+
+    // Event listeners for user choices
+    document.getElementById('rock').addEventListener('click', function () {
+      const userChoice = 'rock';
+      const computerChoice = getComputerChoice();
+      const result = determineWinner(userChoice, computerChoice);
+      displayResult(userChoice, computerChoice, result);
+    });
+
+    document.getElementById('paper').addEventListener('click', function () {
+      const userChoice = 'paper';
+      const computerChoice = getComputerChoice();
+      const result = determineWinner(userChoice, computerChoice);
+      displayResult(userChoice, computerChoice, result);
+    });
+
+    document.getElementById('scissors').addEventListener('click', function () {
+      const userChoice = 'scissors';
+      const computerChoice = getComputerChoice();
+      const result = determineWinner(userChoice, computerChoice);
+      displayResult(userChoice, computerChoice, result);
+    });
+  </script>
+
+</body>
+</html>

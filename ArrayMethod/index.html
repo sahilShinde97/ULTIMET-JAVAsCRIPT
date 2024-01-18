@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // higher order function 
+    // map - loops and return an array
+    // filter - loops and returns an array with matching 
+    /// reduce
+
+// map
+
+  //const doubleMap = ( Numbers) => {
+    //return Numbers.map(number => number * 2);
+  //}
+//  console.log(doubleMap([1,2,3,4,4,5,6,7,8,9,10]));
+
+// filter([1,2,3,4,5,6],3) => [4,5,6]
+
+let filter = (numbers, greaterTan) => {
+
+  let result = [];
+  for(const number of numbers){
+    if(number > greaterTan){
+      result.push(number);
+    }
+  }
+  return result;
+}
+// console.log(filter([1,2,3,4,5,6],3));
+
+//.filter method
+ 
+const nums = [1,2,3,4,5,6]
+//console.log(nums.filter(num => num > 3 || num < 2))
+
+
+
+// if(userIsAuthenticated && userIsPayingMember){
+//  code gose here
+//  }
+
+
+const actors = [
+  {name : 'johnny', netWorth : 200000},
+  {name : ' amber', netWorth : 500},
+  {name : ' tom', netWorth : 54545},
+  {name : ' rama', netWorth : 554545555355},
+  {name : ' soma', netWorth : 4552534535532545},
+  {name :'leonardo', netWorth :403904930},
+]
+
+console.log (actors.reduce((prev , curr) => prev + curr.netWorth , 0))
+//console.log(actors)
+//let result = actors.filter(actor => actor.netWorth > 10)
+//console.log(result);
+//let name = result.map(actor => actor.name).join(', ')
+//innerHtml = ` <h1> ${name}</h1>`
+
+
+// reduce()
+
+// sum all of the net worths 
+// SUM : Think reduce 
+// reduce takes in a function as an argument
+// reduce loops and gives you back the accumulator
+function sum(a,b){
+  return a + b;
+}
+const num = [1,2,3,4];
+//const result = num.reduce(sum)
+
+//console.log(result)
+function mul(x,y){
+
+  return x * y;
+}
+const num1 = [1,2,3,4]
+//const result1 = num1.reduce(mul)
+//console.log(result1)
+
+  </script>
+</body>
+</html>

@@ -5,18 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
-  <script>
+   <body>
+    <script>
 
-    const howManyLetters = () =>{
-      const phrase = 'hey ,can you go to grocery store with me';
-      
-      for(letter in phrase)
-      {
-        console.log(letter)
+      //for of
+      /*
+      const howManyLetters = () =>{
+        const phrase = 'hey ,can you go to grocery store with me';
+        
+        for(const letter of phrase)
+        {
+          console.log(letter )
+        }
       }
+      howManyLetters();
+*/
+
+
+
+      //for in
+    
+      const howManyLetters = (phrase) =>{
+
+      return {result : phrase.length}
     }
-    howManyLetters();
-  </script>
-</body>
+
+     const phrase = prompt('write your phrase');
+
+     console.log(howManyLetters(phrase));
+    
+
+
+     </script>
+   </body>
 </html>
