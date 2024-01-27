@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>promises</title>
+  </head>
+  <body>
+    <script>
+      /*
+          
+      const ticket = new Promise(function(resolve,reject){
+        const isBoarded = true;
+        if(isBoarded){
+          resolve('You are not in the flight');
+        }else{
+          reject('Your flight has been cancelled')
+        }
+      })
+      ticket.then((data) => {
+        console.log('wohoo',data);
+      }).catch((data)=> {
+        console.log('oh no',data);
+      }).finally(()=>{
+        console.log('I will always be executed');
+      })
+*/
+ 
+/*
+            *******USING THEN*******
+  function getCheese(){
+    return new Promise((resolve , reject)=>{
+      setTimeout(()=>{
+        const cheese = '🧀';
+        resolve(cheese);
+        //reject('Bad cheese')
+      },2000);
+    });  
+  }
+ 
+
+  function makeDough(cheese){
+    return new Promise((resolve,reject)=>{
+      setTimeout(()=>{
+        const dough = cheese +" 🍩 ";
+        resolve(dough);
+        //reject('bad dough')
+      },2000); 
+    });
+  }
+ 
+
+  function bakePizza(dough){
+    return new Promise((resolve , reject)=>{
+      setTimeout(()=>{
+        const pizza = dough +' 🍕 ';
+        resolve(pizza);
+        //reject('')
+      },2000);
+    });  
+  }
+*/
+                 // using then'
+/*
+  getCheese()
+  .then((cheese)=>{
+        console.log('here is the cheese',cheese);
+        return makeDough(cheese);
+     })
+    .then((dough)=>{
+        console.log('here is the dough',dough);
+        return bakePizza(dough);
+    })
+    .then((pizza)=>{
+        console.log("here is the pizza",pizza);
+        return bakePizza(pizza)
+    }).catch((data)=>{
+      console.log('error occured',data)
+    }).finally(()=>{
+      console.log('process end')
+    })
+      
+*/
+
+// with async and await
+function getCheese(){
+  return new Promise((resolve , reject)=>{
+    setTimeout(()=>{
+      const cheese = '🧀';
+      resolve(cheese);
+      //reject('Bad cheese')
+    },2000);
+  });  
+}
+
+
+function makeDough(cheese){
+  return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+      const dough = cheese +" 🍩 ";
+      resolve(dough);
+      //reject('bad dough')
+    },2000); 
+  });
+}
+
+function bakePizza(dough){
+  return new Promise((resolve , reject)=>{
+    setTimeout(()=>{
+      const pizza = dough +' 🍕 ';
+      resolve(pizza);
+      //reject('')
+    },2000);
+  });  
+}
+// using async await
+/*
+  async function orderPizza(){
+
+    const cheese = await getCheese();
+    console.log('here is the cheese',cheese);
+
+    const dough = await makeDough(cheese);
+    console.log('here is the dough',dough);
+
+    const pizza = await bakePizza(dough)
+    console.log('here is the pizza',pizza);
+  }
+  orderPizza();
+*/
+   // when any chance process is break then use try
+   async function orderPizza(){
+try {
+        const cheese = await getCheese();
+        console.log('here is the cheese',cheese);
+
+        const dough = await makeDough(cheese);
+        console.log('here is the dough',dough);
+
+        const pizza = await bakePizza(dough)
+        console.log('here is the pizza',pizza);
+    } catch(err){
+      console.log('error occured',err)
+    }
+    console.log('process ended')
+ }
+  orderPizza();
+
+    </script>
+  </body>
+</html>

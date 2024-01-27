@@ -2,7 +2,7 @@
 // methods
 // properties
 
-
+/*
 // this
 class Car {
     constructor(name,color,topSpeed){
@@ -25,7 +25,7 @@ class Car {
        },3000)
     }
 
-    drive(){
+    drive(speed = 10){
     //  console.log('just drove 2 miles!')
       this.currentSpeed += 10;
       console.log(`driving speed at ${this.currentSpeed}mph`)
@@ -80,4 +80,22 @@ const numbers = [1,2,3,4,5]
 porsche.zeroTOSixty()
 porsche.stop()
 console.log(porsche.currentSpeed)
+*/
+// you can only have methods inside of classes
 
+const number = [1,2,3]
+number.push(4); // method
+//console.log(number)
+
+Array.prototype.myPush = function(item){
+ this[this.length] = item
+ return this
+}
+
+const fruits = [ '🍌', ' 🍓', ' 🍪' , ' 🎭', ' 🍎']
+fruits.myPush(' 🥝')
+fruits.myPush(' 👾')
+fruits.myPush(' 🏪')
+fruits.myPush(' 🐿️')
+fruits.myPush(' 🙃')
+console.log(fruits)
